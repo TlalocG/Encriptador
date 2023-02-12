@@ -1,12 +1,20 @@
 
 function validarMayus(){
     let texto = document.getElementById("original").value;
+    if(texto == ""){
+        alert("Ingresa un mensaje para comenzar")
+        location.reload();
+        return true;
+        document.getElementById("encriptado").value = "";       
+    }
+
     let validador = texto.match(/^[a-z ]+$/);
 
     if(!validador || validador === 0) {
         alert("Solo son permitidas letras minúsculas y sin acentos")
         location.reload();
         return true;
+        document.getElementById("encriptado").value = "";
     }
 }
 
